@@ -1,0 +1,70 @@
+.loginPage {
+    .login {
+        margin: auto;
+        width: 850px;
+        display: grid;
+        height: 500px;
+        grid-template-columns: repeat(3, 1fr);
+
+        .welcomeScreen {
+            background-color: white;
+            border-radius: 10px 0px 0px 10px;
+            display: flex;
+            width: 100%;
+            position: relative;
+            font-size: 10px;
+            color: coral;
+            gap: 35px;
+            height: 100%;
+            align-items: center;
+            flex-direction: column;
+        }
+        .loginScreen {
+            grid-column: span 2;
+            background-color: rgb(255, 193, 152);
+            display: flex;
+            border-radius: 0px 10px 10px 0px;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .buttons {
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 500px){
+            display: flex;
+            flex-direction: column;
+            width: 85%;
+    
+            .welcomeScreen {
+                display: none       ;
+            }
+
+            .loginScreen {
+                border-radius: 10px;
+
+                .buttons{
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+}
+
+.loginImage {
+    z-index: -1;
+    object-fit: cover;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    right: 0;
+}

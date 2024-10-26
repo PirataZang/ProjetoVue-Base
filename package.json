@@ -9,8 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.6.0",
     "collect.js": "^4.36.1",
-    "vue": "^3.5.10"
+    "sass": "^1.80.4",
+    "vue": "^3.5.10",
+    "vue-router": "^4.4.5"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.1.4",
