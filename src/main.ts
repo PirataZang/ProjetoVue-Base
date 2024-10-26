@@ -7,15 +7,16 @@ import aButton from "./components/utils/fields/aButton.vue";
 import aSelect from "./components/utils/fields/aSelect.vue";
 import Grid from "./components/utils/Grid.vue";
 import aSwitch from "./components/utils/fields/aSwitch.vue";
-
-
-//? FONTAWESOME
+import api from "./components/utils/api";
 import '@fortawesome/fontawesome-free/css/all.css';
 
 
+
+
 const app = createApp(App)
-app.config.devtools = false
-app.config.productionTip = false
+
+// GLOBALS
+app.config.globalProperties.$api = api;
 
 
 // UTILS

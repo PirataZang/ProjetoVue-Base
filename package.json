@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.6.0",
+    "axios": "^1.7.7",
     "collect.js": "^4.36.1",
     "sass": "^1.80.4",
     "vue": "^3.5.10",
