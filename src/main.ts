@@ -9,8 +9,8 @@ import Grid from "./components/utils/Grid.vue";
 import aSwitch from "./components/utils/fields/aSwitch.vue";
 import api from "./components/utils/api";
 import '@fortawesome/fontawesome-free/css/all.css';
-
-
+import Cardapio from "./components/cardapio/cardapio.vue";
+import HomePage from "./components/HomePage.vue";
 
 
 const app = createApp(App)
@@ -18,6 +18,11 @@ const app = createApp(App)
 // GLOBALS
 app.config.globalProperties.$api = api;
 
+// CARDÁPIO
+app.component('Cardapio', Cardapio);
+
+// HOMEPAGE
+app.component('HomePage', HomePage);
 
 // UTILS
 app.component('Grid', Grid)

@@ -11,12 +11,20 @@
             </div>
             <div class="loginScreen">
                 <p> <i class="fa-solid fa-lock"></i> Realize o seu Login abaixo</p>
-                <aInput wid="6" v-model="form.email" icon="fa-regular fa-user" placeholder="Informe seu E-mail" label="E-mail"/>
-                <aInput wid="6" notes="aaaaaaa" icon="fa-solid fa-lock" label="Senha" v-model="form.password" type="password" placeholder="Inform Sua Senha" />
+                <aInput :required="true" wid="6" v-model="form.email" icon="fa-regular fa-user" placeholder="Informe seu E-mail"
+                    label="E-mail" />
+                <aInput :required="true" wid="6" notes="aaaaaaa" icon="fa-solid fa-lock" label="Senha" v-model="form.password"
+                    type="password" placeholder="Inform Sua Senha" />
                 <div class="buttons">
-                    <aSwitch v-model="form.connected" text="Mantenha-me Conectado" :value="true"/>
-                    <aButton v-model="submit" text="Enviar" />
+                    <aSwitch v-model="form.keepConnected" text="Mantenha-me Conectado" :value="true" />
+                    <aButton v-model="submit" text="Acessar" @click="openSite" />
                 </div>
+                <span v-if="access && access != null">
+                    <p> Olá <b>{{ access }}</b></p>
+                </span>
+                <span v-if="access == false && access != null">
+                    <p> Acesso Negado, Verifique seu <b>E-mail</b> ou sua <b>Senha</b></p>
+                </span>
             </div>
         </div>
     </div>
@@ -31,10 +39,34 @@ export default {
             form: {
                 email: null,
                 password: null,
-                connected: false,
+                keepConnected: false,
             },
-            submit: null
+            submit: null,
+            access: null
         })
+    },
+
+    methods: {
+        async openSite() {
+            try {
+                const response = await this.$api.postData('auth/login', {
+                    email: this.form.email,
+                    password: this.form.password,
+                    keepConnected: this.form.keepConnected
+                });
+
+                if (response && response.access_token) {
+                    localStorage.setItem('token', response.access_token);
+                    this.access = true;
+                    this.$router.push({ name: 'HomePage' });
+                } else {
+                    this.access = false;
+                }
+            } catch (error) {
+                this.access = false;
+            }
+        }
     }
+
 }
 </script>

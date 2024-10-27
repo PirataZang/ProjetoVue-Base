@@ -4,7 +4,7 @@ import { toRaw } from 'vue';
 
 // Criação da instância do Axios com configuração padrão
 const apiClient = axios.create({
-  baseURL: 'http://localhost:5959/', // Coloque a URL base da sua API
+  baseURL: 'http://localhost:3000/', // Coloque a URL base da sua API
   timeout: 10000, // Timeout da requisição (em ms)
   headers: {
     'Content-Type': 'application/json',
@@ -20,7 +20,19 @@ apiClient.interceptors.response.use(
   }
 );
 
-// Tipagem das funções com base no tipo de retorno e parâmetros PQP EM
+
+// Adiciona o token JWT em todas as requisições após o login
+apiClient.interceptors.request.use(config => {
+  const token = localStorage.getItem('token');
+  if (token) {
+      config.headers['Authorization'] = `Bearer ${token}`;
+  }
+  return config;
+}, error => {
+  return Promise.reject(error);
+});
+
+// Tipagem das funções com base no tipo de retorno e parâmetros
 export const postData = async <T>(url: string, data: T): Promise<any> => {
   try {
     const rawData = toRaw(data);
