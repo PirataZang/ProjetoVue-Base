@@ -29,7 +29,7 @@ const router = createRouter({
 });
 
 // Guard de navegação
-router.beforeEach((to, from, next) => {
+router.beforeEach((to, _, next) => {
   let token = localStorage.getItem('token');
   const hasToken = token?.includes('ktdAtt4c6');
   if (to.meta.requiresAuth && !hasToken) {
