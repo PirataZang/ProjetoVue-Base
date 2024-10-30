@@ -12,18 +12,31 @@ const routes = [
   {
     path: '/home-page',
     name: 'HomePage',
-    component: HomePage
+    component: HomePage,
+    meta: { requiresAuth: true } 
   },
   {
     path: '/cardapio',
     name: 'Cardapio',
-    component: Cardapio
+    component: Cardapio,
+    meta: { requiresAuth: true } 
   },
 ];
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL), // para usar URLs amigáveis
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes
+});
+
+// Guard de navegação
+router.beforeEach((to, from, next) => {
+  let token = localStorage.getItem('token');
+  const hasToken = token?.includes('ktdAtt4c6');
+  if (to.meta.requiresAuth && !hasToken) {
+    next({ path: '/adm' });
+  } else {
+    next();
+  }
 });
 
 export default router;

@@ -6,15 +6,16 @@
 @import url(Login/_login.scss);
 @import url(Fields/_aSwitch.scss);
 
-body{
-    width: 99%;
-    min-height: 96vh;
-    display: flex;
-    flex-direction: column;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+body {
+  width: 99%;
+  min-height: 96vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #fff7c2;
 
-    /* Container principal */
+  /* Container principal */
   .container {
     display: flex;
     flex-direction: column;
@@ -44,30 +45,48 @@ body{
 }
 
 .menu {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  width: 45px;
+  height: 100%;
+  background: rgba(244, 205, 54, 0.7098039216);
+  border-radius: 0px 10px 0px 0px;
+  padding: 10px;
+  transition: all 0.5s ease-in;
+
+  .routes {
     display: flex;
     flex-direction: column;
-    left: 25px;
-    border-radius: 7px;
-    position: absolute;
-    border: 2px solid white;
-    height: 100%;
-    top: 10px;
-    padding: 10px;
+    gap: 10px;
 
-    .routes {
-        display: flex;
-        flex-direction: column;
-        a {
-            text-decoration: none;
-            color: #fff;
-            font-family: "Roboto", sans-serif;
-            font-size: 14px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            padding: 10px 15px;
-            transition:
-                color 0.3s ease,
-                background-color 0.3s ease;
+    .menuItem {
+      display: flex;
+      flex-direction: row;
+      gap: 5px;
+      align-items: center;
+
+      .item {
+        display: none;
+        text-decoration: none;
+        font-family: "Roboto", sans-serif;
+        font-size: 18px;
+        color: black;
+
+        &:hover {
+          opacity: 100%;
         }
+      }
     }
+  }
+
+  &:hover {
+    width: 10%;
+
+    .menuItem {
+      .item {
+        display: block;
+      }
+    }
+  }
 }

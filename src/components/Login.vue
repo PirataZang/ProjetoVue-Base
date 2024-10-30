@@ -19,9 +19,6 @@
                     <aSwitch v-model="form.keepConnected" text="Mantenha-me Conectado" :value="true" />
                     <aButton v-model="submit" text="Acessar" @click="openSite" />
                 </div>
-                <span v-if="access && access != null">
-                    <p> Olá <b>{{ access }}</b></p>
-                </span>
                 <span v-if="access == false && access != null">
                     <p> Acesso Negado, Verifique seu <b>E-mail</b> ou sua <b>Senha</b></p>
                 </span>

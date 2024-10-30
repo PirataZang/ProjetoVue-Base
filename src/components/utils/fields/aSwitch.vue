@@ -14,7 +14,6 @@ export default {
             type: [String, Number, Boolean], // Espera um String ou Number
             required: true
         },
-
         value: {
             type: Boolean,
             default: false
