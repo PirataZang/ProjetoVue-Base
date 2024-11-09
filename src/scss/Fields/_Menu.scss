@@ -1,0 +1,59 @@
+.menu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 45px;
+    height: 100%;
+    background: rgb(48, 48, 48);
+    border-radius: 0px 10px 0px 0px;
+    padding: 10px;
+    transition: width 0.5s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+    overflow-x: hidden;
+
+
+    div.logo{
+
+    }
+
+  
+    .routes {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .menuItem {
+        display: flex;
+        flex-direction: row;
+        font-size: 30px;
+        gap: 10px;
+        align-items: center;
+  
+        .item {
+          opacity: 0;
+          text-decoration: none;
+          font-family: "Roboto", sans-serif;
+          font-size: 20px;
+          color: black;
+          transition: opacity 0.5s ease; /* Suaviza a aparição do texto */
+  
+          &:hover {
+            opacity: 100%;
+          }
+        }
+      }
+    }
+  
+    &:hover {
+      width: 200px;
+    }
+  
+    &:hover .routes .menuItem .item {
+      opacity: 1;
+    }
+  
+    /* Exibe o nome das rotas logo após o carregamento */
+    &.loaded .routes {
+      opacity: 1;
+    }
+  }
+  

@@ -5,15 +5,15 @@
 @import url(Fields/_aSelect.scss);
 @import url(Login/_login.scss);
 @import url(Fields/_aSwitch.scss);
+@import url(Fields/_Menu.scss);
 
 body {
-  width: 99%;
-  min-height: 96vh;
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   font-family: Arial, sans-serif;
   margin: 0;
-  background-color: #fff7c2;
 
   /* Container principal */
   .container {
@@ -21,7 +21,7 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    width: 100%;
+    padding-left: 5%;
   }
 
   /* Conteúdo principal */
@@ -29,7 +29,7 @@ body {
     max-width: 1200px;
     width: 100%;
     padding: 20px;
-    background-color: #f8f9fa;
+    background-color: #252525;
   }
 
   /* Estilos para layout em tela grande */
@@ -40,53 +40,6 @@ body {
     }
     .content {
       width: 60%;
-    }
-  }
-}
-
-.menu {
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  width: 45px;
-  height: 100%;
-  background: rgba(244, 205, 54, 0.7098039216);
-  border-radius: 0px 10px 0px 0px;
-  padding: 10px;
-  transition: all 0.5s ease-in;
-
-  .routes {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-
-    .menuItem {
-      display: flex;
-      flex-direction: row;
-      gap: 5px;
-      align-items: center;
-
-      .item {
-        display: none;
-        text-decoration: none;
-        font-family: "Roboto", sans-serif;
-        font-size: 18px;
-        color: black;
-
-        &:hover {
-          opacity: 100%;
-        }
-      }
-    }
-  }
-
-  &:hover {
-    width: 10%;
-
-    .menuItem {
-      .item {
-        display: block;
-      }
     }
   }
 }

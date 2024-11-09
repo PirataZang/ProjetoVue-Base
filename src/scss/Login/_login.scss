@@ -10,18 +10,16 @@
             background-color: white;
             border-radius: 10px 0px 0px 10px;
             display: flex;
-            width: 100%;
             position: relative;
             font-size: 10px;
-            color: coral;
-            gap: 35px;
             height: 100%;
             align-items: center;
             flex-direction: column;
+            justify-content: center;
         }
         .loginScreen {
             grid-column: span 2;
-            background-color: rgb(255, 193, 152);
+            background-color: rgb(59 59 59);
             display: flex;
             border-radius: 0px 10px 10px 0px;
             width: 100%;
@@ -38,19 +36,19 @@
             }
         }
 
-        @media (max-width: 500px){
+        @media (max-width: 500px) {
             display: flex;
             flex-direction: column;
             width: 85%;
-    
+
             .welcomeScreen {
-                display: none       ;
+                display: none;
             }
 
             .loginScreen {
                 border-radius: 10px;
 
-                .buttons{
+                .buttons {
                     flex-direction: column;
                 }
             }

@@ -2,9 +2,7 @@
     <div class="inputField" :style="divStyle">
 
         <label v-if="label" class="inputLabel"><i v-if="icon" :class="icon"></i> {{ label }}</label>
-        <input :class="`inputValue ${search ? 'search' : ''}  ${required ? 'required' : ''}`" :type="computedType"
-            :maxlength="maxLength" :value="modelValue" :placeholder="placeholder"
-            @input="$emit('update:modelValue', $event.target.value)" :required="required" />
+        <input :style="(textColor ? 'color:' + textColor + ';' : '')" :class="`inputValue ${search ? 'search' : ''}  ${required ? 'required' : ''}`" :type="computedType" :maxlength="maxLength" :value="modelValue" :placeholder="placeholder" @input="$emit('update:modelValue', $event.target.value)" :required="required" />
         <div v-if="type == 'password'" class="passwordButtons">
             <i v-if="!passwordVisible" class="fa-solid fa-eye" @click="togglePasswordVisibility(true)"></i>
             <i v-else class="fa-solid fa-eye-slash" @click="togglePasswordVisibility(false)"></i>
@@ -38,6 +36,10 @@ export default {
             type: Number,
         },
         label: {
+            type: String,
+            default: ''
+        },
+        textColor: {
             type: String,
             default: ''
         },

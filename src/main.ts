@@ -9,29 +9,28 @@ import Grid from "./components/utils/Grid.vue";
 import aSwitch from "./components/utils/fields/aSwitch.vue";
 import api from "./components/utils/api";
 import '@fortawesome/fontawesome-free/css/all.css';
-import Cardapio from "./components/cardapio/cardapio.vue";
-import HomePage from "./components/HomePage.vue";
-
+import Menu from "./components/utils/menu.vue";
+import collect from "collect.js";
 
 const app = createApp(App)
 
 // GLOBALS
-app.config.globalProperties.$api = api;
-
-// CARDÁPIO
-app.component('Cardapio', Cardapio);
-
-// HOMEPAGE
-app.component('HomePage', HomePage);
-
+app.config.globalProperties.$api = api
 // UTILS
 app.component('Grid', Grid)
 
-// FIELDS
+// COMPONENTS
 app.component('aInput', aInput)
 app.component('aButton', aButton)
 app.component('aSelect', aSelect)
 app.component('aSwitch', aSwitch)
+app.component('Menu', Menu)
 
+
+
+
+// ROTAS
+app.provide('allRoutes', collect(router.options.routes).filter(route => route.meta?.app != false));
 app.use(router)
+
 app.mount('#app')

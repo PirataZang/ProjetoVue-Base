@@ -1,19 +1,17 @@
 <template>
     <img class="loginImage"
-        src="https://irp.cdn-website.com/33406c6e/dms3rep/multi/P%C3%A3es-com-ingredientes-regionais.jpg"
+        src="https://images.unsplash.com/photo-1523008629704-c7ed2dccceed?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         alt="Imagem do Google Drive">
     <div class="loginPage">
         <div class="container login">
             <div class="welcomeScreen">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQimVOX93rytkgGA-g75fGqpAl9GSpbMvVd9Q&s"
-                    alt="Logo">
                 <h1>Olá Seja Bem Vindo!</h1>
             </div>
             <div class="loginScreen">
                 <p> <i class="fa-solid fa-lock"></i> Realize o seu Login abaixo</p>
-                <aInput :required="true" wid="6" v-model="form.email" icon="fa-regular fa-user" placeholder="Informe seu E-mail"
+                <aInput :required="true" textColor="white" wid="6" v-model="form.email" icon="fa-regular fa-user" placeholder="Informe seu E-mail"
                     label="E-mail" />
-                <aInput :required="true" wid="6" notes="aaaaaaa" icon="fa-solid fa-lock" label="Senha" v-model="form.password"
+                <aInput :required="true" textColor="white"wid="6" notes="aaaaaaa" icon="fa-solid fa-lock" label="Senha" v-model="form.password"
                     type="password" placeholder="Inform Sua Senha" />
                 <div class="buttons">
                     <aSwitch v-model="form.keepConnected" text="Mantenha-me Conectado" :value="true" />
