@@ -3,7 +3,6 @@
     <div>
         <nav class="menu">
             <div class="logo">
-                <router-link to="/" target="_blank">adawdawdw</router-link>
             </div>
             <div class="routes">
                 <span class="menuItem" v-for="(route, index) in routes" :key="index">

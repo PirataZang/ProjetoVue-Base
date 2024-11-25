@@ -1,6 +1,7 @@
 <template>
     <div class="aSwitchField">
-        <input class="aSwitch" type="checkbox" name="switch" id="switch" :value="modelValue" :required="required">
+        <input class="aSwitch" type="checkbox" name="switch" id="switch" :checked="modelValue" :required="required"
+            @change="updateValue" />
         <label class="aSwitchButton" for="switch"></label>
         <span class="aSwitchText">{{ text }}</span>
     </div>
@@ -11,7 +12,7 @@ export default {
     name: 'aSwitch',
     props: {
         modelValue: {
-            type: [String, Number, Boolean], // Espera um String ou Number
+            type: [String, Number, Boolean], // expects a String, Number, or Boolean
             required: true
         },
         value: {
@@ -25,6 +26,12 @@ export default {
         text: {
             type: String,
             default: ''
+        }
+    },
+
+    methods: {
+        updateValue(event) {
+            this.$emit('update:modelValue', event.target.checked);
         }
     }
 }

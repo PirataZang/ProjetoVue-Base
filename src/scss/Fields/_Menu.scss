@@ -24,7 +24,7 @@
       .menuItem {
         display: flex;
         flex-direction: row;
-        font-size: 30px;
+        font-size: 25px;
         gap: 10px;
         align-items: center;
   
@@ -34,9 +34,11 @@
           font-family: "Roboto", sans-serif;
           font-size: 20px;
           color: black;
-          transition: opacity 0.5s ease; /* Suaviza a aparição do texto */
+          transition: all 0.5s ease; /* Suaviza a aparição do texto */
   
           &:hover {
+            color: white;
+            font-size: 27px;
             opacity: 100%;
           }
         }

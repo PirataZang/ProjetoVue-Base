@@ -1,6 +1,6 @@
 <template>
     <div class="buttonField">
-        <button :class="`${disabled ? 'disabled' : 'buttonValue'} ${save ? 'save' : ''}`" :value="modelValue" @click="$emit('update:modelValue', $event.target.value)" :disabled="disabled">{{ text }}</button>
+        <button :class="`${disabled ? 'disabled' : 'buttonValue'} ${save ? 'save' : ''}`" :value="modelValue" @click="updateValue" :disabled="disabled">{{ text }}</button>
     </div>
 </template>
 <script>
@@ -22,5 +22,11 @@ export default {
             default: false,
         },
     },
+
+    methods: {
+        updateValue(event){
+            this.$emit('update:modelValue', event.target.value)
+        }
+    }
 }
 </script>

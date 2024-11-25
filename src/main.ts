@@ -11,11 +11,14 @@ import api from "./components/utils/api";
 import '@fortawesome/fontawesome-free/css/all.css';
 import Menu from "./components/utils/menu.vue";
 import collect from "collect.js";
+import Swal from "sweetalert2";
 
 const app = createApp(App)
 
 // GLOBALS
 app.config.globalProperties.$api = api
+app.config.globalProperties.$swal = Swal;
+
 // UTILS
 app.component('Grid', Grid)
 
@@ -26,11 +29,8 @@ app.component('aSelect', aSelect)
 app.component('aSwitch', aSwitch)
 app.component('Menu', Menu)
 
-
-
-
 // ROTAS
-app.provide('allRoutes', collect(router.options.routes).filter(route => route.meta?.app != false));
+app.provide('allRoutes', collect(router.options.routes).filter(route => route.meta?.app != false && route.meta?.hide != true));
 app.use(router)
 
 app.mount('#app')

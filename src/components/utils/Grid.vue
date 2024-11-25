@@ -36,7 +36,7 @@ export default {
         columnsName: [],
         columnsDescription: [],
         rowDescription: [],
-        selectedRows: [], // Itens selecionados
+        selectedRows: [],
     }),
 
     props: {

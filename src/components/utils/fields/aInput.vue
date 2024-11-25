@@ -28,10 +28,6 @@ export default {
             type: String,
             default: ''
         },
-        mask: {
-            type: [Object, String],
-            default: '',
-        },
         maxLength: {
             type: Number,
         },

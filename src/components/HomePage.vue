@@ -7,7 +7,6 @@
             <Menu />
         </div>
         <div class="container">
-            <h2>Olha</h2>
         </div>
     </div>
     <RouterView />
