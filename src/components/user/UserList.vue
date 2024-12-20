@@ -1,8 +1,11 @@
 <template>
-    <div class="userList">
-        <aButton text="Cadastrar" @click="createProducts" />
-        <aButton text="Editar" :disabled="selectedItems.length !== 1" @click="editProduct" />
-        <aButton text="Excluir" :disabled="selectedItems.length === 0" @click="deleteProduct" />
+    <Menu />
+    <div class="userList list column">
+        <div class="buttonsList flex row">
+            <aButton text="Cadastrar" @click="createProducts" />
+            <aButton text="Editar" :disabled="selectedItems.length !== 1" @click="editProduct" />
+            <aButton text="Excluir" :disabled="selectedItems.length === 0" @click="deleteProduct" />
+        </div>
         <Grid :row="items" :columns="columns" @selection-changed="handleSelectionChange" />
     </div>
 </template>

@@ -14,7 +14,7 @@ body {
   flex-direction: column;
   font-family: Arial, sans-serif;
   margin: 0;
-
+  
   /* Container principal */
   .container {
     display: flex;
@@ -23,23 +23,29 @@ body {
     padding: 20px;
     padding-left: 5%;
   }
+  
+  .flex {
+    display: flex;
+  }
+
+  /*Listagem*/
+  .list {
+    display: flex;
+    padding: 2% 1% 2% 3%;
+  }
+
+  .row {
+    flex-direction: row;
+  }
+
+  .column {
+    flex-direction: column;
+  }
 
   /* Conteúdo principal */
   .content {
-    max-width: 1200px;
-    width: 100%;
+    width: 98%;
     padding: 20px;
     background-color: #252525;
-  }
-
-  /* Estilos para layout em tela grande */
-  @media (min-width: 768px) {
-    .container {
-      flex-direction: row;
-      justify-content: space-between;
-    }
-    .content {
-      width: 60%;
-    }
   }
 }
